@@ -1,6 +1,10 @@
+import string
+
+
 class QuestionOne:
     def __init__(self, text):
         self.text = text
+        self.clean_text()
 
     def sorted_letters(self):
         try:
@@ -11,6 +15,10 @@ class QuestionOne:
             return "".join(results)
         except ValueError:
             raise ValueError("Text must be more than two characters")
+
+    def clean_text(self):
+        for c in string.punctuation:
+            self.text = self.text.replace(c, "")
 
     def sort_formatted_text(self, formatted):
         """Sort provided list of chars and return it back to caller"""

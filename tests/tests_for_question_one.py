@@ -31,6 +31,13 @@ class TestQuestionOne(unittest.TestCase):
         instance = QuestionOne(text)
         self.assertEqual(instance.sorted_letters(), "acgglnoo")
 
+    def test_sorted_letters_ignores_punctuation_marks(self):
+        """Test if the sorted_letters method ignores punctuation marks/characters"""
+        test_input = "@cool gang#$%!!"
+        expected_result = "acgglnoo"
+        instance = QuestionOne(text=test_input)
+        self.assertEqual(instance.sorted_letters(), expected_result)
+
 
 if __name__ == '__main__':
     unittest.main()
