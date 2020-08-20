@@ -15,6 +15,8 @@ class Cell:
         """Gets the next state with number of neighbours"""
         if neighbours < 2:
             self.state = CellState.DEAD
+        elif neighbours == 2:
+            self.state = CellState.ALIVE
 
 
 class QuestionTwo:

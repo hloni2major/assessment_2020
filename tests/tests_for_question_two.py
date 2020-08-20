@@ -19,9 +19,14 @@ class TestCellWithFewerThanTwoNeighbors(unittest.TestCase):
         self.assertEquals(cell.state, CellState.DEAD)
 
 
-class TestCellWith(object):
+class TestCellWith(unittest.TestCase):
     """Test: 'Any live cell with two or three live neighbours lives on to the next generation.'"""
-    pass
+
+    def test_cell_lives_on_with_two_neighbours(self):
+        """Test: 'Cell lives on with two neighbours.'"""
+        cell = Cell(state=CellState)
+        cell.get_next_state(2)
+        self.assertEquals(cell.state, CellState.ALIVE)
 
 
 if __name__ == '__main__':
