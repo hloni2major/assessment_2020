@@ -17,7 +17,7 @@ class Cell:
             return CellState.DEAD
         elif neighbours == 2 or neighbours == 3:
             return CellState.ALIVE
-        elif neighbours > 3:
+        else:
             return CellState.DEAD
 
 
