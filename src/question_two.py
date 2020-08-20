@@ -13,10 +13,7 @@ class Cell:
 
     def get_next_state(self, neighbours):
         """Gets the next state with number of neighbours"""
-        if neighbours < 2:
-            self.state = CellState.DEAD
-        elif neighbours == 2:
-            self.state = CellState.ALIVE
+        self.state = CellState.ALIVE if neighbours > 1 else CellState.DEAD
 
 
 class QuestionTwo:
