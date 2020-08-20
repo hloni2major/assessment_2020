@@ -50,6 +50,24 @@ class TestCellWithMoreThanThreeNeighbours(unittest.TestCase):
         state = state = cell.get_next_state(4)
         self.assertEquals(state, CellState.DEAD)
 
+    def test_cell_with_five_neighbours_dies(self):
+        """Test: 'Cell with more than three neighbours dies'"""
+        cell = Cell(state=CellState.ALIVE)
+        state = state = cell.get_next_state(5)
+        self.assertEquals(state, CellState.DEAD)
+
+    def test_cell_with_six_neighbours_dies(self):
+        """Test: 'Cell with more than three neighbours dies'"""
+        cell = Cell(state=CellState.ALIVE)
+        state = state = cell.get_next_state(6)
+        self.assertEquals(state, CellState.DEAD)
+
+    def test_cell_with_seven_neighbours_dies(self):
+        """Test: 'Cell with more than three neighbours dies'"""
+        cell = Cell(state=CellState.ALIVE)
+        state = state = cell.get_next_state(7)
+        self.assertEquals(state, CellState.DEAD)
+
 
 class TestDeadCellWithThreeLiveNeighboursBecomesAlive(unittest.TestCase):
     """Test: 'Any dead cell with exactly three live neighbours becomes a live cell, as if by reproduction.'"""
